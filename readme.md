@@ -9,7 +9,7 @@ Suggested usage is to create a script for your new collectable, extend `Collecta
 
 :warning: There are two subtle requirements that must be met for this to work:
 1. The `serializationId` for the prefab should be `-1`.  This value is used by `CollectableBehaviourEditor` to determine if a new ID needs to be assigned.  In future iterations, the `serializationId` will be handled automatically.
-2. The collectables need to all exist in the scene when the scene is loaded.  Dynamically loading and removing collectables may result in unpredictable values for `serializationId` which will lead to inconsistent loading.
+2. The same collectables that were scene when they were saved, must be present when they are loaded.  This means that dynamic loading and destroying of collectables at run time should be done with caution.  Destroying a collectable will return its `serializationId` to the pool of available ids which may result in the same id being assigned to more than one object.
 
 # Demo
 A demo scene has been provided in the /Scenes/ subdirectory.  
