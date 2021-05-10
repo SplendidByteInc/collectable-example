@@ -1,6 +1,6 @@
 # Description
 A proof of concept for serializing and deserializing collectable objects.  This is achieved by providing 3 components:
-1. A `CollectableBehaviour` script which all collectables should extend from.  This provides a `serializationId` and `collectable` field which enables automatic serialization.  
+1. A `CollectableBehaviour` script which all collectables should extend from.  This provides a `serializationId` and `collectable` field which enables serialization.  
 2. A `CollectableBehaviourEditor` script which automatically assigns each new collectable a unique `serializationId`.
 3. A `Serializer` script which reads and writes all collectable's `collectable` states using the `serializationId` to identify the collectable.
 
